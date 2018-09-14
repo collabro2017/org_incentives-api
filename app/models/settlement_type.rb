@@ -1,0 +1,2 @@
+class SettlementType < ApplicationRecord
+end

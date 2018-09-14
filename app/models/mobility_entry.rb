@@ -1,0 +1,2 @@
+class MobilityEntry < ApplicationRecord
+end

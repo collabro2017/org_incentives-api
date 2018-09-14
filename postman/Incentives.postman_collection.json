@@ -1,0 +1,816 @@
+{
+	"info": {
+		"name": "Incentives",
+		"_postman_id": "74cf21b1-55e4-59ad-e9a8-d9ac465c9e19",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"Aleksander\",\n\t\"lastName\": \"Hindenes 2\",\n\t\"email\": \"aleksander.hindenes+3@gmail.com\",\n\t\"residence\": \"no\",\n\t\"entity_id\": \"324119bf-5240-4803-a814-39823180abca\"\n}"
+				},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/employees?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Exercise Window",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"startTime\": \"2018-01-29T16:40:28+00:00\",\n\t\"endTime\": \"2018-02-03T16:40:28+00:00\"\n}"
+				},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/exercise_windows?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"exercise_windows"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Tenant",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Some Company 2\",\n\t\"logo_url\": \"https://www.axactor.com/sites/default/files/axactor_alt_logo_original_sort_rgb.png\",\n\t\"feature\": { \"exercise\": true }\n}"
+				},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/tenants?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tenants"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update Tenant",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"logo_url\": \"https://www.axactor.com/sites/default/files/axactor_alt_logo_original_sort_rgb.png\"\n}"
+				},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/tenants/344437fa-6bbc-4744-9aa7-633e2ea61c8f?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tenants",
+						"344437fa-6bbc-4744-9aa7-633e2ea61c8f"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Feature",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"exercise\": true\n}"
+				},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/features?tenantId=344437fa-6bbc-4744-9aa7-633e2ea61c8f",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"features"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "344437fa-6bbc-4744-9aa7-633e2ea61c8f",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List Employees",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"Aleksander\",\n\t\"lastName\": \"Hindenes\",\n\t\"email\": \"aleksander.hindenes@gmail.com\",\n\t\"residence\": \"no\",\n\t\"entity_id\": \"18fe2347-1ca1-4beb-bd58-7777b83efe8f\"\n}"
+				},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/employees?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List Exercise Windows",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"Aleksander\",\n\t\"lastName\": \"Hindenes\",\n\t\"email\": \"aleksander.hindenes@gmail.com\",\n\t\"residence\": \"no\",\n\t\"entity_id\": \"18fe2347-1ca1-4beb-bd58-7777b83efe8f\"\n}"
+				},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/exercise_windows?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"exercise_windows"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List Features",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"Aleksander\",\n\t\"lastName\": \"Hindenes\",\n\t\"email\": \"aleksander.hindenes@gmail.com\",\n\t\"residence\": \"no\",\n\t\"entity_id\": \"18fe2347-1ca1-4beb-bd58-7777b83efe8f\"\n}"
+				},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/features?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"features"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List Stock Prices",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"Aleksander\",\n\t\"lastName\": \"Hindenes\",\n\t\"email\": \"aleksander.hindenes@gmail.com\",\n\t\"residence\": \"no\",\n\t\"entity_id\": \"18fe2347-1ca1-4beb-bd58-7777b83efe8f\"\n}"
+				},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/stock_prices?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"stock_prices"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Stock Price",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"price\": 1.33,\n\t\"date\": \"2017-01-01\",\n\t\"manual\": true,\n\t\"message\": \"Manually valued by an independent third party\"\n}"
+				},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/stock_prices?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"stock_prices"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List Entities",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/entities?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"entities"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Incentive Program",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Program 2017\",\n\t\"startDate\": \"01.01.2017\",\n\t\"endDate\": \"01.01.2020\",\n\t\"capacity\": 1000000,\n\t\"incentive_sub_programs\": [{\n\t\t\"name\": \"Subprogram\",\n\t\t\"instrumentTypeId\": \"rsu\",\n\t\t\"settlementTypeId\": \"equity\",\n\t\t\"performance\": false,\n\t\t\"incentive_sub_program_template\": {\n\t\t\t\"grantDate\": \"01.01.2017\",\n\t\t\t\"expiryDate\": \"01.01.2020\",\n\t\t\t\"vesting_event_templates\": [\n\t\t\t\t{\n\t\t\t\t\t\"quantityPercentage\": 0.5,\n\t\t\t\t\t\"strike\": 1,\n\t\t\t\t\t\"vestedDate\": \"10.01.2017\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"quantityPercentage\": 0.5,\n\t\t\t\t\t\"strike\": 1.5,\n\t\t\t\t\t\"vestedDate\": \"20.01.2017\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t},\n\t{\n\t\t\"name\": \"Subprogram2\",\n\t\t\"instrumentTypeId\": \"option\",\n\t\t\"settlementTypeId\": \"equity\",\n\t\t\"performance\": true,\n\t\t\t\"incentive_sub_program_template\": {\n\t\t\t\"grantDate\": \"01.01.2017\",\n\t\t\t\"expiryDate\": \"01.01.2020\",\n\t\t\t\"vesting_event_templates\": [\n\t\t\t\t{\n\t\t\t\t\t\"quantityPercentage\": 0.5,\n\t\t\t\t\t\"strike\": 1,\n\t\t\t\t\t\"vestedDate\": \"10.01.2017\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"quantityPercentage\": 0.5,\n\t\t\t\t\t\"strike\": 1.5,\n\t\t\t\t\t\"vestedDate\": \"20.01.2017\"\n\t\t\t\t}\n\t\t\t]\n\t\t} \n\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/incentive_programs?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"incentive_programs"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Sub Program",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\"name\": \"Subprogram\",\n\t\t\"instrumentTypeId\": \"option\",\n\t\t\"settlementTypeId\": \"equity\",\n\t\t\"incentive_sub_program_template\": {\n\t\t\t\"grantDate\": \"01.01.2017\",\n\t\t\t\"expiryDate\": \"01.01.2020\",\n\t\t\t\"vesting_event_templates\": [\n\t\t\t\t{\n\t\t\t\t\t\"quantityPercentage\": 0.5,\n\t\t\t\t\t\"strike\": 1,\n\t\t\t\t\t\"vestedDate\": \"10.01.2017\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"quantityPercentage\": 0.5,\n\t\t\t\t\t\"strike\": 1.5,\n\t\t\t\t\t\"vestedDate\": \"20.01.2017\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}"
+				},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/incentive_programs/{{incentive_program_id}}/sub_programs?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"incentive_programs",
+						"{{incentive_program_id}}",
+						"sub_programs"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List Tenants",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nae\": \"Firma AS2\",\n\t\"name2\": \"Firma AS\"\n}"
+				},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/tenants/",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tenants",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List Incentive Programs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/incentive_programs?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"incentive_programs"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List Sub Programs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/incentive_programs/{{incentive_program_id}}/sub_programs?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"incentive_programs",
+						"{{incentive_program_id}}",
+						"sub_programs"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List Sub Programs' awards",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/sub_programs/{{sub_program_id}}/awards?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"sub_programs",
+						"{{sub_program_id}}",
+						"awards"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Entity",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Entity\",\n\t\"identification\": \"123456789\",\n\t\"countryCode\": \"no\"\n}"
+				},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/entities?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"entities"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Award",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"incentive_sub_program_id\": \"f246842b-85a5-42e2-878f-03ec2da1565c\",\n\t\"grantDate\": \"01.01.2017\",\n\t\"expiryDate\": \"01.01.2020\",\n\t\"quantity\": 999,\n\t\"employee_id\": \"3059eb52-0345-4197-99f7-05ca70999367\",\n\t\"vesting_events\": [\n\t\t{\n\t\t\t\"quantity\": 999,\n\t\t\t\"strike\": 1.0,\n\t\t\t\"vestedDate\": \"01.01.2017\"\n\t\t},\n\t\t\t{\n\t\t\t\"quantity\": 999,\n\t\t\t\"strike\": 1.0,\n\t\t\t\"vestedDate\": \"01.01.2017\"\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/awards?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"awards"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Show users awards",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{employee_portal_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"incentive_sub_program_id\": \"356633c7-ef0a-40f1-82d8-5f7f5e51744b\",\n\t\"grantDate\": \"01.01.2017\",\n\t\"expiryDate\": \"01.01.2020\",\n\t\"quantity\": 1000,\n\t\"employee_id\": \"6cf30f19-35bc-4f8c-9159-7704cb4ebc5c\"\n}"
+				},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/awards",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"awards"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Employee portal welcome",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{employee_portal_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"incentive_sub_program_id\": \"356633c7-ef0a-40f1-82d8-5f7f5e51744b\",\n\t\"grantDate\": \"01.01.2017\",\n\t\"expiryDate\": \"01.01.2020\",\n\t\"quantity\": 1000,\n\t\"employee_id\": \"6cf30f19-35bc-4f8c-9159-7704cb4ebc5c\"\n}"
+				},
+				"url": {
+					"raw": "{{api_origin}}/api/v1/welcomes?tenantId={{tenant_id}}",
+					"host": [
+						"{{api_origin}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"welcomes"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "{{tenant_id}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

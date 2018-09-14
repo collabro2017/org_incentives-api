@@ -1,0 +1,1 @@
+AUTH0_NAMESPACE='https://portal.optioincentives.no/'
